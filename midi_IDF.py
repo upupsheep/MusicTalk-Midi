@@ -12,6 +12,7 @@ class MidiMessage:
         # self.msg = msg_str
 
     def channel(self):
+        """ Get channel attribute """
         if (self.msg[0] != 'program_change'):
             target = self.msg[1]
             idx = target.find('=')
@@ -19,6 +20,7 @@ class MidiMessage:
             return int(target[idx + 1:])
 
     def note(self):
+        """ Get note attribute """
         if (self.msg[0] != 'program_change'):
             target = self.msg[2]
             idx = target.find('=')
@@ -26,6 +28,7 @@ class MidiMessage:
             return int(target[idx + 1:])
 
     def velocity(self):
+        """ Get velocity attribute """
         if (self.msg[0] != 'program_change'):
             target = self.msg[3]
             idx = target.find('=')
@@ -33,6 +36,7 @@ class MidiMessage:
             return int(target[idx + 1:])
 
     def time(self):
+        """ Get time attribute """
         if (self.msg[0] != 'program_change'):
             target = self.msg[4]
             idx = target.find('=')
@@ -67,6 +71,8 @@ def play(music_file):
 
 
 def job_of_play_music(music_file):
+    """ create a thread to play music """
+
     def call():
         play(music_file)
 
@@ -76,13 +82,12 @@ def job_of_play_music(music_file):
 
 
 def job_of_music_feature(music_file):
+    """ fetch message from music file and get music features """
     midi_file = MidiFile(music_file)
     for msg in midi_file:
         # print(dir(msg))
         # exit()
         time.sleep(msg.time)
-        # print("time:", msg.time)
-        # exit()
         if not msg.is_meta:
             # print(msg)
             str_msg = str(msg)
@@ -94,9 +99,8 @@ def job_of_music_feature(music_file):
 
 
 if __name__ == "__main__":
-    music_file = "BEYER003-VK.mid"
-    # play music
+    music_file = "魔法公主主題曲-VW.mid"
+    """ play music """
     job_of_play_music(music_file)
-
-    # play action
+    """ push feature data """
     job_of_music_feature(music_file)

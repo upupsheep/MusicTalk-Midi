@@ -76,7 +76,8 @@ def job_of_play_music(music_file):
 
 
 def job_of_music_feature(music_file):
-    for msg in music_file:
+    midi_file = MidiFile(music_file)
+    for msg in midi_file:
         # print(dir(msg))
         # exit()
         time.sleep(msg.time)
@@ -93,15 +94,9 @@ def job_of_music_feature(music_file):
 
 
 if __name__ == "__main__":
-    midi_file = MidiFile('BEYER003-VK.mid')
-    '''
-    for i, track in enumerate(mid.tracks):
-    print('Track {}: {}'.format(i, track.name))
-    for msg in track:
-        print(str(msg))
-    '''
+    music_file = "BEYER003-VK.mid"
     # play music
-    job_of_play_music("BEYER003-VK.mid")
+    job_of_play_music(music_file)
 
     # play action
-    job_of_music_feature(midi_file)
+    job_of_music_feature(music_file)

@@ -16,7 +16,15 @@ pip install mido
 
 Also, make sure you have `DAN.py`, `csmapy.py` in the same directory with `midi_IDF.py`.
 
-Change the midi file in the code to what you want.
+Change the `music_file` in the code ( in main ) to the midi file you want.
+
+For example: (in main function)
+
+```py
+music_file = "BEYER003-VK.mid"
+```
+
+
 
 Finally, run the program using the following command:
 

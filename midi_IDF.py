@@ -13,8 +13,8 @@ ServerURL = 'http://garden.iottalk.tw'  #with no secure connection
 #ServerURL = 'https://DomainName' #with SSL connection
 Reg_addr = None  #if None, Reg_addr = MAC address
 
-DAN.profile['dm_name'] = 'music_ctl'
-DAN.profile['df_list'] = ['music_ctl_i']
+DAN.profile['dm_name'] = 'Music'
+DAN.profile['df_list'] = ['Note']
 #DAN.profile['df_list'] = ['Sandy_I', 'Sandy_O']
 DAN.profile['d_name'] = None  # None for autoNaming
 DAN.device_registration_with_retry(ServerURL, Reg_addr)
@@ -148,7 +148,7 @@ def job_of_music_feature(music_file):
                     print('color:', color)
                     # print(color[0])
                     # exit()
-                    DAN.push('music_ctl_i', color[0], color[1], color[2])
+                    DAN.push('Note', color[0], color[1], color[2])
 
 
 if __name__ == "__main__":

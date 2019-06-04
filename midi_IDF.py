@@ -9,7 +9,7 @@ import DAN
 # Uncomment the following part to use IoTTalk v1
 # Note that DAN.py, csmapy.py need to be at the same directory
 # """
-ServerURL = 'https://test.iottalk.tw'  #with no secure connection
+ServerURL = 'http://garden.iottalk.tw'  #with no secure connection
 #ServerURL = 'https://DomainName' #with SSL connection
 Reg_addr = None  #if None, Reg_addr = MAC address
 

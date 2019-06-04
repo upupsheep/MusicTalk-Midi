@@ -9,7 +9,7 @@ import DAN
 # Uncomment the following part to use IoTTalk v1
 # Note that DAN.py, csmapy.py need to be at the same directory
 # """
-ServerURL = 'http://garden.iottalk.tw'  #with no secure connection
+ServerURL = 'https://test.iottalk.tw'  #with no secure connection
 #ServerURL = 'https://DomainName' #with SSL connection
 Reg_addr = None  #if None, Reg_addr = MAC address
 
@@ -152,7 +152,7 @@ def job_of_music_feature(music_file):
 
 
 if __name__ == "__main__":
-    music_file = "魔法公主主題曲-VW.mid"
+    music_file = "魔法公主主題曲-VK.mid"
     while (DAN.state != 'SET_DF_STATUS'):
         # wait for DAN ready
         time.sleep(0.1)

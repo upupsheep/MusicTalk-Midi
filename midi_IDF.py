@@ -41,7 +41,7 @@ class ColorMapping:
         note = []
         for i in range(128):
             note.append(i % 12)
-        self.note_color_map = note.copy()
+        self.note_color_map = note
         self.color_map = [[40, 255, 0], [0, 255, 242], [0, 122, 255], [
             5, 0, 255
         ], [71, 0, 237], [99, 0, 178], [145, 25, 62], [174, 0, 0], [255, 0, 0],

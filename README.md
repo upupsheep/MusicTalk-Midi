@@ -4,12 +4,20 @@
 
 ### 1. Usage:
 
-Make sure you install the python dependency `mido`
+Make sure you install all the python dependency.
 
-To install `mido`, use the following command:
+This project uses `mido`. To install `mido`, use the following command:
 
 ```b
 pip install mido
+```
+
+
+
+To easily install all dependencies, run the following command:
+
+```bash
+sudo pip install -r requirements.txt
 ```
 
 
